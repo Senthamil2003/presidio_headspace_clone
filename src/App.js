@@ -5,6 +5,7 @@ import Main from "./Component/Main/Main";
 import Home from "./Component/Home/Home";
 import MyHeadspace from "./Component/MyHeadspace/MyHeadspace";
 import HeadspaceOptions from "./Component/HeadspaceOptions/HeadspaceOptions";
+import HeadspaceContent from "./Component/HeadspaceContent/HeadspaceContent";
 
 function App() {
   return (
@@ -13,7 +14,8 @@ function App() {
         <Routes>
           <Route path="/home" element={<Main />} />
           <Route path="myHeadspace" element={<MyHeadspace />}>
-          <Route path="sample" element={<HeadspaceOptions />} />
+            <Route path="meditate" element={<HeadspaceContent  option="meditate"/>} />
+            <Route path="focus" element={<HeadspaceContent option="focus" />} />
           </Route>
         </Routes>
       </Router>

@@ -1,6 +1,6 @@
 import React from "react";
 
-export default function AdvertiseCard() {
+export default function ç() {
   return (
     <div className="advertise-cont">
       <svg

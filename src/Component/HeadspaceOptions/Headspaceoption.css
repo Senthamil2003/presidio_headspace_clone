@@ -29,7 +29,7 @@
   text-align: center;
 }
 .total-option-cont {
-  height: 500px;
+  height: auto;
 }
 .advertise-btn {
   display: inline-block;
@@ -119,9 +119,39 @@
   font-size: 23px;
   font-weight: bold;
 }
+
 .explore-card-cont {
+  margin: 10px 0;
   display: flex;
-}
-.explore-card-cont {
+  justify-content: space-between;
+
+  height: 120px;
+  border-radius: 10px;
   background-color: rgb(249, 244, 242);
+}
+.explore-card-head {
+  font-size: 19px;
+  font-weight: 600;
+  margin: 5px;
+}
+.explore-card-txt-cont {
+  display: flex;
+  flex-direction: column;
+justify-content: center;
+padding: 0 15px;
+height: 100%;
+}
+.explore-card-txt {
+  margin: 5px;
+}
+.explore-card-img-cont {
+  height: 100%;
+  width: 110px;
+  display: flex;
+  align-items: end;
+}
+.explore-card-img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
 }

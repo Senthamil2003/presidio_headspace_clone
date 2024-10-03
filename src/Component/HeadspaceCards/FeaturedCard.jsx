@@ -2,22 +2,19 @@ import React from "react";
 import { IoIosLock } from "react-icons/io";
 import { RiArrowRightSLine } from "react-icons/ri";
 
-export default function FeaturedCard() {
+export default function FeaturedCard({ data }) {
+  console.log(data);
   return (
     <div>
       <div className="featured-card-cont">
         <div className="featured-img-cont">
-          <img
-            className="featured-img"
-            src="https://hs-prod-content.imgix.net/illus-course-basics_1-header-20200211-rc__1582570740307.pdf?fm=png32&w=320.90625&fs=png&ixlib=js-1.4.1&s=d4cda88238bd5c939ff81a64a9f921cc"
-            alt=""
-          />
+          <img className="featured-img" src={data?.image} alt="" />
         </div>
         <div className="feature-arrow-cont">
           <div className="featured-txt-cont">
             <div className="feature-txt-cont">
               <IoIosLock />
-              <p className="feature-txt">Basic</p>
+              <p className="feature-txt">{data.title}</p>
             </div>
             <div className="feature-info-cont">
               <svg
@@ -34,7 +31,9 @@ export default function FeaturedCard() {
                   fill="#3A3938"
                 ></path>
               </svg>
-              <p className="feature-txt">Course 5-10 min</p>
+              <p className="feature-txt">
+                {data.category} {data.duration}
+              </p>
             </div>
           </div>
           <RiArrowRightSLine />

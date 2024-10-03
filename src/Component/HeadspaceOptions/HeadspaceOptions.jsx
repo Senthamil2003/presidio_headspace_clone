@@ -1,19 +1,32 @@
-import React from "react";
+import React, { useState } from "react";
 import "./Headspaceoption.css";
-import FeaturedCard from "./FeaturedCard";
-import AdvertiseCard from "./AdvertiseCard";
-import HeadspaceExplore from "./HeadspaceExplore";
+import Feature from "../HeadspaceOptionContent/Feature";
+import Recent from "../HeadspaceOptionContent/Recent";
 
 export default function HeadspaceOptions() {
+  const [option, setOption] = useState("featured");
   return (
     <div className="total-option-cont">
       <div className="headspace-option-cont">
-        <div className="headspace-option ">Recent</div>
-        <div className="headspace-option option-active">Featured</div>
+        <div
+          className={`headspace-option ${
+            option === "recent" ? "option-active" : ""
+          }`}
+          onClick={() => setOption("recent")}
+        >
+          Recent
+        </div>
+        <div
+          className={`headspace-option ${
+            option === "featured" ? "option-active" : ""
+          }`}
+          onClick={() => setOption("featured")}
+        >
+          Featured
+        </div>
       </div>
-      <FeaturedCard />
-      <AdvertiseCard />
-      <HeadspaceExplore />
+
+      {option == "featured" ? <Feature /> : <Recent />}
     </div>
   );
 }
