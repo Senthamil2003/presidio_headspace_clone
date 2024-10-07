@@ -1,5 +1,5 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
-import { getFocus, getMeditawait, getMusic } from "../axios/axiosRequest";
+import { getFocus, getMeditawait, getMusic } from "../Axios/axiosRequest";
 
 export const fetchMeditateData = createAsyncThunk(
   "data/fetchMeditateData",
@@ -34,7 +34,7 @@ const MyHeadspaceSlice = createSlice({
       isMusicPlayed: false,
       musicLink: "",
     },
-    isLoggedIn: true,
+    isLoggedIn: false,
     isSubscribed: false,
     loading: false,
     error: null,
@@ -48,7 +48,6 @@ const MyHeadspaceSlice = createSlice({
     },
     setMusic: (state, action) => {
       state.music = action.payload;
-
     },
   },
   extraReducers: (builder) => {
@@ -81,4 +80,4 @@ const MyHeadspaceSlice = createSlice({
 });
 
 export default MyHeadspaceSlice.reducer;
-export const { changeOption, login ,setMusic} = MyHeadspaceSlice.actions;
+export const { changeOption, login, setMusic } = MyHeadspaceSlice.actions;

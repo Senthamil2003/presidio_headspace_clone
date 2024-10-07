@@ -1,10 +1,17 @@
 body {
   font-family: Cabin;
-  color: #44423e;
+  color: var(--text-color);
 }
 
 * {
   margin: 0;
   padding: 0;
   /* border:1px solid red */
+}
+
+:root {
+  --primary-color: #3498db;
+  --secondary-color: #2ecc71;
+  --background-color: #ff7d1c;
+  --text-color: #44423e;
 }

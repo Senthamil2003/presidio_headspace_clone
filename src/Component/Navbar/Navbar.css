@@ -16,7 +16,7 @@
   width: fit-content;
 }
 .icon {
-  background-color: #ff7d1c;
+  background-color: var(--background-color);
   height: 35px;
   width: 35px;
   border-radius: 50%;

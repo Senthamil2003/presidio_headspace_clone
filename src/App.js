@@ -3,11 +3,11 @@ import React, { lazy, Suspense } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 import Main from "./Component/Main/Main";
-import ProtectedLayout from "./Component/ProtectedRoute/ProtectedLayout";
+import ProtectedLayout from "./Utilty/ProtectedRoute/ProtectedLayout";
 
 import MusicList from "./Component/MusicList/MusicList";
 
-const MyHeadspace = lazy(() => import("./Component/MyHeadspace/MyHeadspace"));
+const MyHeadspace = lazy(() => import("./Pages/MyHeadspace/MyHeadspace"));
 const HeadspaceContent = lazy(() =>
   import("./Component/HeadspaceContent/HeadspaceContent")
 );

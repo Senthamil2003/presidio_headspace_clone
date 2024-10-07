@@ -52,7 +52,7 @@
     transform 150ms cubic-bezier(0.32, 0.94, 0.6, 1);
   user-select: none;
   white-space: nowrap;
-  background: rgb(255, 115, 0);
+  background: var(--background-color);
   border-radius: 2rem;
   color: rgb(255, 255, 255);
   opacity: 1;

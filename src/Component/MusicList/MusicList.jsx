@@ -3,7 +3,7 @@ import "./Music.css";
 import MusicCard from "../HeadspaceCards/MusicCard";
 
 import "react-h5-audio-player/lib/styles.css";
-import { getMusic } from "../../axios/axiosRequest"; // assuming this is an async function
+import { getMusic } from "../../Axios/axiosRequest";
 
 export default function MusicList() {
   const [music, setMusic] = useState([]);
@@ -11,16 +11,14 @@ export default function MusicList() {
   useEffect(() => {
     const fetchMusic = async () => {
       try {
-        const data = await getMusic(); // Await the asynchronous API call
-        setMusic(data); // Set the music data into state
+        const data = await getMusic();
+        setMusic(data);
       } catch (error) {
         console.error("Error fetching music data:", error);
       }
     };
     fetchMusic();
   }, []);
-
-  console.log(music);
 
   return (
     <div className="music-tot-cont">
@@ -36,7 +34,7 @@ export default function MusicList() {
           />
         ))
       ) : (
-        <p></p>
+        <p>Loading</p>
       )}
     </div>
   );

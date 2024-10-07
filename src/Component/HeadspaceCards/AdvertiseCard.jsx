@@ -1,6 +1,6 @@
 import React from "react";
 
-export default function ç() {
+export default function MyHeadspaceSlice() {
   return (
     <div className="advertise-cont">
       <svg

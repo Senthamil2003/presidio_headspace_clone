@@ -7,7 +7,6 @@ export default function BottomNav() {
   const location = useLocation();
   console.log(location.pathname);
   const regexMusic = /^\/myHeadspace\/meditate(\/.*)?$/;
-  // const regexFocus = /^\/myHeadspace\/focus(\/.*)?$/;
 
   return (
     <div class="bottom-div">

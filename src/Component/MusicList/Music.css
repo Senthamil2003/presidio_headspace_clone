@@ -48,19 +48,18 @@
   bottom: 0;
   left: 0;
   width: 100%;
-
   box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
   z-index: 1000;
 }
 .music-player svg {
-  color: #ff7d1c !important;
+  color: var(--background-color) !important;
 }
 
 .rhap_progress-filled {
-  background-color: #ff7d1c !important;
+  background-color: var(--background-color) !important;
 }
 .rhap_progress-indicator {
-  background-color: #ff7d1c !important;
+  background-color: var(--background-color) !important;
 }
 @media only screen and (max-width: 768px) {
   .music-tot-con {
