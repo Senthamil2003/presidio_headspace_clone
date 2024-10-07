@@ -1,11 +1,16 @@
 import "./App.css";
+import React, { lazy, Suspense } from "react";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
-import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 import Main from "./Component/Main/Main";
-import Home from "./Component/Home/Home";
-import MyHeadspace from "./Component/MyHeadspace/MyHeadspace";
-import HeadspaceOptions from "./Component/HeadspaceOptions/HeadspaceOptions";
-import HeadspaceContent from "./Component/HeadspaceContent/HeadspaceContent";
+import ProtectedLayout from "./Component/ProtectedRoute/ProtectedLayout";
+
+import MusicList from "./Component/MusicList/MusicList";
+
+const MyHeadspace = lazy(() => import("./Component/MyHeadspace/MyHeadspace"));
+const HeadspaceContent = lazy(() =>
+  import("./Component/HeadspaceContent/HeadspaceContent")
+);
 
 function App() {
   return (
@@ -13,9 +18,33 @@ function App() {
       <Router>
         <Routes>
           <Route path="/home" element={<Main />} />
-          <Route path="myHeadspace" element={<MyHeadspace />}>
-            <Route path="meditate" element={<HeadspaceContent  option="meditate"/>} />
-            <Route path="focus" element={<HeadspaceContent option="focus" />} />
+          <Route element={<ProtectedLayout />}>
+            <Route
+              path="myHeadspace"
+              element={
+                <Suspense fallback={<div>Loading...</div>}>
+                  <MyHeadspace />
+                </Suspense>
+              }
+            >
+              <Route
+                path="meditate"
+                element={
+                  <Suspense fallback={<div>Loading...</div>}>
+                    <HeadspaceContent option="meditate" />
+                  </Suspense>
+                }
+              />
+              <Route
+                path="focus"
+                element={
+                  <Suspense fallback={<div>Loading...</div>}>
+                    <HeadspaceContent option="focus" />
+                  </Suspense>
+                }
+              />
+              <Route path="meditate/music" element={<MusicList />} />
+            </Route>
           </Route>
         </Routes>
       </Router>

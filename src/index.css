@@ -2,7 +2,8 @@ body {
   font-family: Cabin;
   color: #44423e;
 }
-*{
+
+* {
   margin: 0;
   padding: 0;
   /* border:1px solid red */

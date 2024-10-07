@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import "./HeadspaceContent.css";
 import HeadspaceTopItem from "./HeadspaceTopItem";
 import HeadspaceOptions from "../HeadspaceOptions/HeadspaceOptions";
-import Explore from "../ExploreMeditation/Explore";
+import Explore from "../HeadspaceCards/Explore";
 import AdvertiseCard from "../HeadspaceCards/AdvertiseCard";
 import { useDispatch, useSelector } from "react-redux";
 import {
@@ -10,12 +10,13 @@ import {
   fetchMeditateData,
 } from "../../Redux/MyHeadspaceSlice";
 export default function HeadspaceContent({ option }) {
+  const { isSubscribed } = useSelector((state) => state.data);
 
   const dispatch = useDispatch();
   useEffect(() => {
-    if (option == "meditate") {
+    if (option === "meditate") {
       dispatch(fetchMeditateData());
-    } else if (option == "focus") {
+    } else if (option === "focus") {
       dispatch(fetchFocusData());
     }
   }, [option]);
@@ -26,7 +27,8 @@ export default function HeadspaceContent({ option }) {
         <p className="topitem-head">Meditate</p>
         <HeadspaceTopItem />
         <HeadspaceOptions />
-        <AdvertiseCard />
+        {!isSubscribed ? <AdvertiseCard /> : <></>}
+
         <Explore />
       </div>
     </div>

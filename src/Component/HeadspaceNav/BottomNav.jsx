@@ -1,25 +1,51 @@
 import React from "react";
 import { FaRegCircle } from "react-icons/fa6";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
+import "./HeadspaceNav.css";
 
 export default function BottomNav() {
+  const location = useLocation();
+  console.log(location.pathname);
+  const regexMusic = /^\/myHeadspace\/meditate(\/.*)?$/;
+  // const regexFocus = /^\/myHeadspace\/focus(\/.*)?$/;
+
   return (
     <div class="bottom-div">
       <div className="bottom-item">
         <div className="bottom-action">
-          <Link to="/myHeadspace/meditate">
-            <FaRegCircle size={15} />
+          <Link
+            className={`bottom-action ${
+              regexMusic.test(location.pathname) ? "bottom-active" : ""
+            }`}
+            to="/myHeadspace/meditate"
+          >
+            <FaRegCircle
+              size={15}
+              style={{
+                color: `${
+                  regexMusic.test(location.pathname) ? "#ff7d1c" : "black"
+                }`,
+              }}
+            />
             <p>Meditate</p>
           </Link>
         </div>
         <div className="bottom-action">
-          <Link to="/myHeadspace/focus">
+          <Link
+            className={`bottom-action ${
+              location.pathname === "/myHeadspace/focus" ? "bottom-active" : ""
+            }`}
+            to="/myHeadspace/focus"
+          >
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="1.3em"
               height="1.3em"
               viewBox="0 0 16 16"
               aria-hidden="true"
+              color={
+                location.pathname === "/myHeadspace/focus" ? "#ff7d1c" : ""
+              }
             >
               <path
                 fill="currentColor"

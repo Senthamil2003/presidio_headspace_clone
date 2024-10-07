@@ -26,7 +26,7 @@ export default function HeadspaceOptions() {
         </div>
       </div>
 
-      {option == "featured" ? <Feature /> : <Recent />}
+      {option === "featured" ? <Feature /> : <Recent />}
     </div>
   );
 }

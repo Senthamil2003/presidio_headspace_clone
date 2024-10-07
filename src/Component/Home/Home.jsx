@@ -3,7 +3,6 @@ import "./Home.css";
 export default function Home() {
   return (
     <>
-    
       <div className="home-tot-cont">
         <div className="home-cont-img">
           <img
@@ -18,7 +17,6 @@ export default function Home() {
           </p>
           <div className="home-yellow-cont">
             <p className="home-yellow-head">
-              
               Free for 14 days, then ₹1499/year
             </p>
 
@@ -43,32 +41,6 @@ export default function Home() {
             alt=""
           />
         </div>
-      </div>
-      <div
-        style={{
-          position: "absolute",
-          width: "100%",
-          height: "150px",
-          overflow: "hidden",
-        }}
-      >
-        <svg
-          viewBox="0 0 1440 320"
-          style={{
-            position: "absolute",
-            top: 0,
-            left: 0,
-            width: "100%",
-            height: "100%",
-          }}
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <path
-            fill="red"
-            fillOpacity="1"
-            d="M0,256L80,250.7C160,245,320,235,480,240C640,245,800,267,960,250.7C1120,235,1280,181,1360,154.7L1440,128L1440,320L1360,320C1280,320,1120,320,960,320C800,320,640,320,480,320C320,320,160,320,80,320L0,320Z"
-          ></path>
-        </svg>
       </div>
     </>
   );

@@ -68,10 +68,12 @@
   cursor: pointer;
   font-size: 15px;
   height: 100%;
+  text-decoration: none;
   position: relative;
+  color: #44423e;
 }
 
-.bottom-action::after {
+.bottom-active::after {
   content: "";
   width: 100px;
   height: 3px;
@@ -80,5 +82,100 @@
   left: 50%;
   transform: translateX(-50%);
   background-color: #ff7d1c;
+}
 
+.link-style {
+  display: flex;
+}
+@media only screen and (max-width: 768px) {
+  .profile-name {
+    display: none;
+  }
+  .headspace-content-item {
+    width: 100% !important;
+    border-radius: 0px !important;
+  }
+  .top-item-img {
+    border-radius: 10px !important;
+  }
+
+  .topitem-box {
+    display: flex;
+    flex-direction: column;
+    height: auto !important;
+    align-items: center;
+    justify-content: center;
+    margin: 3%;
+  }
+  .topitem-img-cont {
+    margin: 5px;
+    width: 520px !important;
+    border-radius: 0px !important;
+  }
+  .total-option-cont {
+    margin: 10px;
+  }
+  .bottom-item {
+    justify-content: space-around !important;
+  }
+  .headspaceNav-container {
+    justify-content: space-between !important;
+  }
+  .tot-explore {
+    margin: 15px;
+  }
+  .headspace-content-container {
+    margin: 7px;
+  }
+}
+
+@media only screen and (max-width: 528px) {
+  .profile-name {
+    display: none;
+  }
+  .headspace-content-item {
+    width: 100% !important;
+    border-radius: 0px !important;
+  }
+  .top-item-img {
+    margin: 5px;
+    border-radius: 10px !important;
+  }
+
+  .topitem-box {
+    display: flex;
+    flex-direction: column;
+    height: auto !important;
+    align-items: center;
+    justify-content: center;
+    margin: 3%;
+  }
+  .topitem-img-cont {
+    width: 420px !important;
+    border-radius: 0px !important;
+  }
+  .total-option-cont {
+    margin: 15px;
+  }
+  .bottom-item {
+    justify-content: space-around !important;
+  }
+  .headspaceNav-container {
+    justify-content: space-between !important;
+  }
+  .headspaceNav-container {
+    padding: 0 60px;
+
+  }
+}
+
+@media only screen and (max-width: 425px) {
+  .topitem-img-cont {
+    width: 370px !important;
+    border-radius: 0px !important;
+  }
+  .headspaceNav-container {
+    padding: 0 30px;
+
+  }
 }

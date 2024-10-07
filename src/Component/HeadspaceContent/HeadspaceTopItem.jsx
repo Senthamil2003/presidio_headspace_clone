@@ -1,10 +1,10 @@
 import React from "react";
 import { IoIosLock } from "react-icons/io";
 import { useSelector } from "react-redux";
-import { Outlet } from "react-router-dom";
+import { Link, Outlet } from "react-router-dom";
 
 export default function HeadspaceTopItem() {
-  const { data } = useSelector((state) => state.data);
+  const { data, isSubscribed } = useSelector((state) => state.data);
 
   return (
     <div className="topitem-box">
@@ -16,7 +16,8 @@ export default function HeadspaceTopItem() {
           <p>Featured</p>
         </div>
         <div className="topitem-head box-head">
-          <IoIosLock />
+          {!isSubscribed ? <IoIosLock /> : <></>}
+
           {data.MainCard?.name}
           <p></p>
         </div>
@@ -56,10 +57,16 @@ export default function HeadspaceTopItem() {
           {data.MainCard?.info}
           <p></p>
         </div>
-        <button className="topitem-button">
-          <IoIosLock />
-          Start My Free Trail
-        </button>
+        {isSubscribed ? (
+          <Link style={{ textDecoration: "none" }} to="/myHeadspace/music">
+            <button className="topitem-button">Listen Music</button>
+          </Link>
+        ) : (
+          <button className="topitem-button">
+            <IoIosLock />
+            Start My Free Trail
+          </button>
+        )}
       </div>
     </div>
   );
